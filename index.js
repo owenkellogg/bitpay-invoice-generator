@@ -11,14 +11,14 @@ BitpayInvoiceGenerator.prototype = {
   getNewInvoice: function(invoiceOptions) {
     var _this = this;
     return new Promise(function(resolve, reject) {
+      var data = {};
+      if (invoiceOptions.data) { data = invoiceOptions.data }
       var invoice = {
         price: invoiceOptions.amount,
         currency: 'BTC',
         notificationURL: _this.notificationURL,
         fullNotifications: true,
-        posData: JSON.stringify({
-          rippleAddress: invoiceOptions.data.rippleAddress
-        })
+        posData: JSON.stringify(data)
       };
       httpClient
         .post('https://bitpay.com/api/invoice')
