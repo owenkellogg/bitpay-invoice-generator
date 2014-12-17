@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/stevenzeiler/bitpay-invoice-generator/issues"
   },
-  "homepage": "https://github.com/stevenzeiler/bitpay-invoice-generator"
+  "homepage": "https://github.com/stevenzeiler/bitpay-invoice-generator",
+  "dependencies": {
+    "bluebird": "^2.3.11",
+    "superagent": "^0.21.0"
+  }
 }

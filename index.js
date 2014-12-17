@@ -2,7 +2,7 @@ var httpClient = require('superagent');
 var Promise = require('bluebird');
 
 function BitpayInvoiceGenerator(options) {
-  if (!this.apiKey) { throw new Error('InvalidBitpayApiKey') }
+  if (!options.apiKey) { throw new Error('InvalidBitpayApiKey') }
   this.apiKey = options.apiKey
   this.notificationURL = options.notificationURL
 }
@@ -26,7 +26,10 @@ BitpayInvoiceGenerator.prototype = {
         .send(invoice)
         .end(function(error, invoiceResponse) {
           if (error) {
-            reject(error);
+            return  reject(error);
+          }
+          if (invoiceResponse.statusCode === 401) {
+            return reject(new Error('Unauthorized'))
           } else {
             resolve(invoiceResponse.body); 
           }
