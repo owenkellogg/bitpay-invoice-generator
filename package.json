@@ -1,0 +1,19 @@
+{
+  "name": "bitpay-invoice-generator",
+  "version": "0.1.0",
+  "description": "Generate new Bitcoin payment invoice pages using the Bitpay API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenzeiler/bitpay-invoice-generator"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenzeiler/bitpay-invoice-generator/issues"
+  },
+  "homepage": "https://github.com/stevenzeiler/bitpay-invoice-generator"
+}
