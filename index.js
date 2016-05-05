@@ -15,7 +15,7 @@ BitpayInvoiceGenerator.prototype = {
       if (invoiceOptions.data) { data = invoiceOptions.data }
       var invoice = {
         price: invoiceOptions.amount,
-        currency: 'BTC',
+        currency: invoiceOptions.currency ? invoiceOptions.currency : 'BTC',
         notificationURL: _this.notificationURL,
         fullNotifications: true,
         posData: JSON.stringify(data)
